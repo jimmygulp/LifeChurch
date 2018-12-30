@@ -5,6 +5,9 @@ use Mojo::UserAgent;
 use Mojo::IOLoop;
 use Switch;
  
+my $OSBHost = "172.16.32.151";
+my $OBSPort = "4444";
+
 # Open WebSocket to echo service
 my $ua = Mojo::UserAgent->new;
 my $request = $ARGV[0];
@@ -20,7 +23,7 @@ switch ($request) {
 	else         { $action = "GetStreamingStatus"; }
 }
 
-$ua->websocket('ws://172.16.32.151:4444' => sub {
+$ua->websocket('ws://$OBSHost:$OBSPort' => sub {
   my ($ua, $tx) = @_;
  
   # Check if WebSocket handshake was successful
