@@ -6,7 +6,7 @@ use Mojo::IOLoop;
 use Switch;
  
 my $OSBHost = "172.16.32.151";
-my $OBSPort = "4444";
+my $OBSPort = "4444"; 
 
 # Open WebSocket to echo service
 my $ua = Mojo::UserAgent->new;
